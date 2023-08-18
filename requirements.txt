@@ -1,0 +1,5 @@
+gradio
+pymupdf
+ultralytics
+pillow
+reportlab
