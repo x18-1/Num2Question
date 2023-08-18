@@ -1,5 +1,6 @@
 from Src.Num2Ques import *
 from Src.CreateData import *
+from Src.AdjustQues import *
 
 with gr.Blocks() as demo:
     with gr.Tab("选错题"):
@@ -58,26 +59,24 @@ with gr.Blocks() as demo:
 
 
 
+    with gr.Tab("调整顺序"):
+        with gr.Row():
+            with gr.Column():
+                path0 = gr.Textbox(label="请输入根目录:")
 
+                path1 = gr.Dropdown([], label="一级标题")
+                path0.change(show_listdir, inputs=path0, outputs=path1)
 
-    # with gr.Tab("调整顺序"):
-    #     with gr.Row():
-    #         with gr.Column():
-    #             path0 = gr.Textbox(label="请输入根目录:")
-    #
-    #             path1 = gr.Dropdown([], label="一级标题")
-    #             path0.change(show_listdir, inputs=path0, outputs=path1)
-    #
-    #             path2 = gr.Dropdown([], label="二级标题")
-    #             path1.change(show_listdir2, inputs=[path0, path1], outputs=path2)
-    #
-    #             input_str = gr.Textbox(label="请输入调整的题号：")
-    #             adjust = gr.Button(value="adjust")
-    #             adjust.click(adjust_question, inputs=[path0, path1, path2, input_str], outputs=None)
-    #         with gr.Column():
-    #             question = gr.Textbox(label="请输入题号")
-    #             text = gr.Image()
-    #
+                path2 = gr.Dropdown([], label="二级标题")
+                path1.change(show_listdir2, inputs=[path0, path1], outputs=path2)
+
+                input_str = gr.Textbox(label="请输入调整的题号：")
+                adjust = gr.Button(value="adjust")
+                adjust.click(adjust_question, inputs=[path0, path1, path2, input_str], outputs=None)
+            with gr.Column():
+                question = gr.Textbox(label="请输入题号")
+                text = gr.Image()
+
 
 
 
