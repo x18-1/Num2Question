@@ -3,4 +3,12 @@
 
 
 
-![]
+![Num2Ques](./Photo/Num2Ques.png)
+
+
+
+![AdjustQuestion](./Photo/AdjustQuestion.png)
+
+
+
+![CreateQuestion](./Photo/CreateData.png)
