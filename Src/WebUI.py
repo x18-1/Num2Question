@@ -101,4 +101,5 @@ with gr.Blocks() as demo:
         Local_Outline.click(create_directory_structure, inputs=[file, WorkSpace], outputs=None)
         Generate_Outline.click(show_outline, inputs=file, outputs=Outline)
         Save_Pic.click(extract_pdf_images, inputs=[file, WorkSpace, dpi], outputs=None)
+
 demo.launch(share=False)
